@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\GiftTypeController;
+use App\Http\Controllers\GiftController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/new-gift-type', function(){
@@ -18,7 +19,7 @@ Route::get('/new-user', function(){
 Route::post('/new-user', [PersonController::class, 'store'])->name('users.create');
 Route::get('/users', [PersonController::class, 'index'])->name('users.index');
 
-
+Route::get('/new-gift', [GiftController::class, 'store'])->name('gifts.create');
 
 Route::get('/', function () {
     return view('welcome');
