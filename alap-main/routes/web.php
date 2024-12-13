@@ -19,7 +19,8 @@ Route::get('/new-user', function(){
 Route::post('/new-user', [PersonController::class, 'store'])->name('users.create');
 Route::get('/users', [PersonController::class, 'index'])->name('users.index');
 
-Route::get('/new-gift', [GiftController::class, 'store'])->name('gifts.create');
+Route::get('/new-gift', [GiftController::class, 'create'])->name('gifts.create');
+Route::post('/new-gift', [GiftController::class, 'store'])->name('gifts.store');
 
 Route::get('/', function () {
     return view('welcome');
