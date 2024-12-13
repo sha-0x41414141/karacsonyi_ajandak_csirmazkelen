@@ -3,7 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/new-gift-type');
+Route::get('/new-gift-type', function(){
+    return view('gift_types.create');
+});
 
 Route::get('/', function () {
     return view('welcome');
