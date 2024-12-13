@@ -16,8 +16,8 @@
     @endif
     <form action="{{route('gift_types.create')}}" method="post">
         @csrf
-        <label for="type">Gift type: </label>
-        <input type="text" name="type" id="type">
+        <label for="gift_type">Gift type: </label>
+        <input type="text" name="gift_type" id="gift_type">
         <button type="submit">Submit</button>
     </form>
 </body>

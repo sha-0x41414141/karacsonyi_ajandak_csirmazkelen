@@ -11,6 +11,7 @@ Route::get('/new-gift-type', function(){
 Route::post('/new-gift-type', [GiftTypeController::class, 'store'])->name('gift_types.create');
 Route::get('/gift_types', [GiftTypeController::class, 'index'])->name('gift_types.index');
 
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -15,9 +15,11 @@ class GiftTypeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'type' => 'required|string|max:255'
+            'gift_type' => 'required|string|max:255'
         ]);
-        GiftType::create($request->all());
+        GiftType::create([
+            'type' => $request->gift_type
+        ]);
         return redirect()->back()->with('success', 'Gift type added.');
     }
 }
