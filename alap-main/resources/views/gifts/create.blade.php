@@ -6,6 +6,14 @@
     <title>New gift</title>
 </head>
 <body>
+    @if($errors->any())
+        @foreach($errors as $error)
+            {{$error}}
+        @endforeach
+    @endif
+    @if(session('success'))
+        {{session('success')}}
+    @endif
     <form action="{{route('gifts.store')}}" method="post">
         @csrf
         <label for="gift_name">Gift name</label>

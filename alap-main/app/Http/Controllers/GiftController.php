@@ -14,6 +14,13 @@ class GiftController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'gift_name' => 'required|string|max:255',
+            'price' => 'required|integer|min:0',
+            'gift_type_id' => 'required|integer|exists:gift_types,id'
+        ]);
 
+        Gift::create();
+        return redirect()->back()->with('success', 'Gift added.');
     }
 }
