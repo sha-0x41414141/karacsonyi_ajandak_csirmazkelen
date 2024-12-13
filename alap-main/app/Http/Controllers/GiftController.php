@@ -8,6 +8,11 @@ use App\Models\Gift;
 
 class GiftController extends Controller
 {
+    public function index()
+    {
+        $gifts = Gift::all();
+        return view('gifts.index', compact('gifts'));
+    }
     public function create()
     {
         $gift_types = GiftType::all();

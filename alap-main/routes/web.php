@@ -22,6 +22,8 @@ Route::get('/users', [PersonController::class, 'index'])->name('users.index');
 Route::get('/new-gift', [GiftController::class, 'create'])->name('gifts.create');
 Route::post('/new-gift', [GiftController::class, 'store'])->name('gifts.store');
 
+Route::get('/gifts', [GiftController::class, 'index'])->name('gifts.index');
+
 Route::get('/', function () {
     return view('welcome');
 });
