@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New gift type</title>
+    <title>Gift types</title>
 </head>
 <body>
-    @if($errors->any())
+@if($errors->any())
         @foreach($errors as $error)
             {{$error}}
         @endforeach
@@ -14,11 +14,11 @@
     @if(session('success'))
         {{session('success')}}
     @endif
-    <form action="{{route('gift_types.create')}}" method="post">
-        @csrf
-        <label for="type">Gift type: </label>
-        <input type="text" name="type" id="type">
-        <button type="submit">Submit</button>
-    </form>
+
+    <ul>
+        @foreach($gifttypes as $gifttype)
+            <li>{{$gifttype->type}}</li>
+        @endforeach
+    </ul>
 </body>
 </html>
