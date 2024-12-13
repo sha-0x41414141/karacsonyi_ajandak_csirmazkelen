@@ -16,6 +16,8 @@ Route::get('/new-user', function(){
     return view('users.create');
 });;
 Route::post('/new-user', [PersonController::class, 'store'])->name('users.create');
+Route::get('/users', [PersonController::class, 'index'])->name('users.index');
+
 
 
 Route::get('/', function () {

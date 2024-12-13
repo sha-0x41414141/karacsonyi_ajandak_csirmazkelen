@@ -7,6 +7,11 @@ use App\Models\People;
 
 class PersonController extends Controller
 {
+    public function index()
+    {
+        $users = People::all();
+        return view('users.index', compact('users'));
+    }
     public function store(Request $request)
     {
         $request->validate([
