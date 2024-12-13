@@ -19,10 +19,10 @@
         @foreach($users as $user)
         <ul>
             <li>
-                {{$user->person_name}}
+                Person name: {{$user->person_name}}
             </li>
             <li>
-            {{$user->email}}
+            Email: {{$user->email}}
             </li><br>
         </ul>
         @endforeach

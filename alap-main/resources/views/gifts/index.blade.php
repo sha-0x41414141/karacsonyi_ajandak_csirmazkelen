@@ -11,12 +11,12 @@
         @foreach($gifts as $gift)
         <ul>
             <li>
-                {{$gift->gift_name}}
+                Gift name: {{$gift->gift_name}}
             </li>
             <li>
-                {{$gift->price}}
+                Price: {{$gift->price}}
             </li>
-            <li>{{$gift->giftType->type}}</li>
+            <li>Gift type: {{$gift->giftType->type}}</li>
             <br>
         </ul>
         @endforeach
