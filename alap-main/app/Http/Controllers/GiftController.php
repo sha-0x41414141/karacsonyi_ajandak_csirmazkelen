@@ -20,7 +20,7 @@ class GiftController extends Controller
             'gift_type_id' => 'required|integer|exists:gift_types,id'
         ]);
 
-        Gift::create();
+        Gift::create($request->all());
         return redirect()->back()->with('success', 'Gift added.');
     }
 }
