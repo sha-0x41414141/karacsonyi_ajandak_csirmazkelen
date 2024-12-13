@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PersonController;
 use App\Http\Controllers\GiftTypeController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +11,11 @@ Route::get('/new-gift-type', function(){
 
 Route::post('/new-gift-type', [GiftTypeController::class, 'store'])->name('gift_types.create');
 Route::get('/gift_types', [GiftTypeController::class, 'index'])->name('gift_types.index');
+
+Route::get('/new-user', function(){
+    return view('users.create');
+});;
+Route::post('/new-user', [PersonController::class, 'store'])->name('users.create');
 
 
 Route::get('/', function () {
