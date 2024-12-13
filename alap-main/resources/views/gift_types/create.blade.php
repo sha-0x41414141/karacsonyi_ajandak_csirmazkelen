@@ -6,8 +6,8 @@
     <title>New gift type</title>
 </head>
 <body>
-    @if($errors->any())
-        @foreach($errors as $error)
+@if($errors->any())
+        @foreach($errors->all() as $error)
             {{$error}}
         @endforeach
     @endif

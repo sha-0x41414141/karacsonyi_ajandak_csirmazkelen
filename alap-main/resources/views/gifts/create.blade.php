@@ -7,7 +7,7 @@
 </head>
 <body>
     @if($errors->any())
-        @foreach($errors as $error)
+        @foreach($errors->all() as $error)
             {{$error}}
         @endforeach
     @endif
